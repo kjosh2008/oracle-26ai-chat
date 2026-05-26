@@ -1,36 +1,94 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Oracle 26ai Chat
 
-## Getting Started
+Modern React/Next.js web interface for Oracle 26ai RAG Chat. Real-time semantic search with source attribution.
 
-First, run the development server:
+## Features
+
+- **Real-time Chat** — Ask questions, get instant RAG-powered answers
+- **Source Attribution** — See which documents answered your question
+- **Responsive Design** — Works on desktop, tablet, mobile
+- **Zero Latency** — Instant feedback while typing
+- **Auto-scaling** — Deployed on Cloud Run with auto-scaling
+
+## Quick Start
+
+### Local Development
 
 ```bash
+git clone https://github.com/kjosh2008/oracle-26ai-chat.git
+cd oracle-26ai-chat
+
+# Install dependencies
+npm install
+
+# Configure .env
+cp .env.example .env
+# Update API_URL to point to your backend
+
+# Run dev server
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+# Visit http://localhost:3000
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Production Build
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+npm run build
+npm run start
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Deployment
 
-## Learn More
+### Cloud Run
+```bash
+gcloud run deploy oracle-frontend \
+  --source . \
+  --region northamerica-northeast1 \
+  --allow-unauthenticated
+```
 
-To learn more about Next.js, take a look at the following resources:
+### Docker
+```bash
+docker build -t oracle-frontend .
+docker run -p 3000:3000 oracle-frontend
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Configuration
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Environment variables:
+- `NEXT_PUBLIC_API_URL` — Backend API endpoint
 
-## Deploy on Vercel
+## Tech Stack
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- **Framework** — Next.js 16 with TypeScript
+- **Styling** — Tailwind CSS
+- **UI Components** — React 19
+- **HTTP Client** — Fetch API
+- **Deployment** — Google Cloud Run
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Browser Support
+
+- Chrome/Edge 90+
+- Firefox 88+
+- Safari 14+
+- Mobile browsers
+
+## Keyboard Shortcuts
+
+- `Enter` — Send message
+- `Shift+Enter` — New line
+- `Ctrl/Cmd+K` — Focus search (future)
+
+## Status
+
+- ✅ Production ready
+- ✅ Auto-scaling enabled
+- ✅ CI/CD pipeline active
+
+## License
+
+MIT
+
+## Support
+
+Issues? Check the Wiki or open a GitHub issue.
