@@ -3,16 +3,27 @@ name: Feature Request
 about: Suggest a new feature
 title: "[FEATURE] "
 labels: enhancement
+assignees: ''
 ---
 
 ## Description
-Clear description of the feature.
+
+A clear and concise description of the feature you want.
 
 ## Use Case
-Why is this feature useful?
 
-## Implementation Ideas
-How could this be implemented?
+Why would this feature be useful?
 
-## Screenshots/Mockups
-If available, add mockups.
+## Proposed Solution
+
+How should this be implemented?
+
+## Example
+
+```typescript
+// Example code showing usage
+```
+
+## Additional Context
+
+Any other context.

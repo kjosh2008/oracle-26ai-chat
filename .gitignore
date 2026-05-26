@@ -75,3 +75,7 @@ firebase-debug.log*
 # Environment
 .env.local
 .env.*.local
+firebase-debug.log
+firebase-debug.log*
+firebase-debug.log
+firebase-debug.log*
